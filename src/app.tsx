@@ -1,59 +1,43 @@
-import { css, SerializedStyles, Theme } from '@emotion/react';
-import { useState } from 'react';
-import { ToastContainer } from 'react-toastify';
+import { useCallback, useState } from 'react';
 
-import { ToastStyle } from './styles/toast.style';
-import media from './styles/media';
+import Start from './components/tetris/start';
+import StageIntro from './components/tetris/stage-intro';
+import StageClear from './components/tetris/stage-clear';
+import Dead from './components/tetris/dead';
+import Ranking from './components/tetris/ranking';
+import Play from './components/tetris/play';
+import Clear from './components/tetris/clear';
+import { TPanel } from './types';
 
 import type { FC } from 'react';
 
-const SApp = (theme: Theme): SerializedStyles => css`
-  color: ${theme.colorBlue50};
-  ${media.xxlarge} {
-    font-size: 50px;
-  }
-  ${media.xlarge} {
-    font-size: 50px;
-  }
-  ${media.large} {
-    font-size: 40px;
-  }
-  ${media.medium} {
-    font-size: 30px;
-  }
-  ${media.small} {
-    font-size: 20px;
-  }
-  ${media.xsmall} {
-    font-size: 10px;
-  }
-`;
-
 const App: FC = () => {
-  const [error, setError] = useState(false);
-  if (error) throw new Error('err');
-  return (
-    <>
-      <div css={SApp}>
-        <h1>앱</h1>
-        <button type="button" onClick={() => setError(true)}>
-          에러내기
-        </button>
-      </div>
-      <ToastContainer
-        css={ToastStyle}
-        position="bottom-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-      />
-    </>
-  );
+  const [step, setStep] = useState<TPanel>('start');
+  const [score, setScore] = useState<number>(0);
+  const [stage, setStage] = useState<number>(0);
+
+  const increaseStage = useCallback(() => {
+    setStage((stage) => stage + 1);
+  }, []);
+
+  switch (step) {
+    case 'start':
+      return <Start setStep={setStep} />;
+    case 'stageIntro':
+      return <StageIntro setStep={setStep} stage={stage} increaseStage={increaseStage} />;
+    case 'play':
+      return <Play setStep={setStep} stage={stage} score={score} />;
+    case 'stageClear':
+      return <StageClear />;
+    case 'clear':
+      return <Clear />;
+    case 'dead':
+      return <Dead />;
+    case 'ranking':
+      return <Ranking />;
+    default:
+      return null;
+  }
 };
 
 export default App;
