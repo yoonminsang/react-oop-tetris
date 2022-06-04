@@ -16,7 +16,7 @@ const WrapperS = css`
 `;
 
 const StageIntro: FC<Props> = ({ setStep, stage, increaseStage }) => {
-  const [timer, setTimer] = useState<number>(0);
+  const [timer, setTimer] = useState<number>(3);
 
   useLayoutEffect(() => {
     increaseStage();
@@ -33,8 +33,10 @@ const StageIntro: FC<Props> = ({ setStep, stage, increaseStage }) => {
 
   return (
     <div css={WrapperS}>
-      <h1>스테이지 {stage}</h1>
-      <h2>{timer}</h2>
+      <h1>
+        스테이지 <b>{stage}</b>
+      </h1>
+      <h2 data-testid="timer">{timer}</h2>
     </div>
   );
 };
