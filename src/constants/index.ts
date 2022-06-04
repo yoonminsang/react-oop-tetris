@@ -11,5 +11,5 @@ export const KEY_EVENT = {
   right: 'ArrowRight',
   up: 'ArrowUp',
   down: 'ArrowDown',
-  space: 'Space',
+  space: ' ',
 };
