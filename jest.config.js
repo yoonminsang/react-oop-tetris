@@ -4,7 +4,7 @@ module.exports = {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
   },
   testEnvironment: 'jsdom',
-  testMatch: ['<rootDir>/**/*.test.(js|jsx|ts|tsx)'],
+  // testMatch: ['<rootDir>/**/*.test.(js|jsx|ts|tsx)'],
   setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   modulePaths: ['<rootDir>/src'],
