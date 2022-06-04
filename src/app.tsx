@@ -20,13 +20,21 @@ const App: FC = () => {
     setStage((stage) => stage + 1);
   }, []);
 
+  const increaseScore = useCallback(
+    (line: number) => {
+      const addScore = Math.floor(stage * 5 * 2 ** line);
+      setScore((score) => score + addScore);
+    },
+    [stage],
+  );
+
   switch (step) {
     case 'start':
       return <Start setStep={setStep} />;
     case 'stageIntro':
       return <StageIntro setStep={setStep} stage={stage} increaseStage={increaseStage} />;
     case 'play':
-      return <Play setStep={setStep} stage={stage} score={score} />;
+      return <Play setStep={setStep} stage={stage} score={score} increaseScore={increaseScore} />;
     case 'stageClear':
       return <StageClear />;
     case 'clear':
