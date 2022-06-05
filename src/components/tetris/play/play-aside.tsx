@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 import { AsideS, DisplayS } from '@/components/common';
 
 import type { FC } from 'react';
