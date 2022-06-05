@@ -1,25 +1,9 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 
 import { SET } from '@/constants';
+import { getStageInfo } from '@/utils/stage.util';
 
 import type { Dispatch, SetStateAction } from 'react';
-
-const getStageInfo = ({
-  currentStage,
-  lastStage,
-  minSpeed,
-  maxSpeed,
-}: {
-  currentStage: number;
-  lastStage: number;
-  minSpeed: number;
-  maxSpeed: number;
-}) => {
-  const rate = (currentStage - 1) / (lastStage - 1);
-  const speed = minSpeed + (maxSpeed - minSpeed) * (1 - rate);
-  const initNeedClearLine = 10 + 3 * currentStage;
-  return { speed, initNeedClearLine };
-};
 
 export const usePlayStatus = (stage: number, setScore: Dispatch<SetStateAction<number>>, clearLine: number) => {
   const { speed, initNeedClearLine } = useMemo(
