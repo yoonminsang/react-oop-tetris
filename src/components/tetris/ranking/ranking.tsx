@@ -1,9 +1,20 @@
-import type { FC } from 'react';
+import { TPanel } from '@/types';
 
-interface Props {}
+import type { Dispatch, FC, SetStateAction } from 'react';
 
-const Ranking: FC<Props> = () => {
-  return <div />;
+interface Props {
+  setStep: Dispatch<SetStateAction<TPanel>>;
+}
+
+const Ranking: FC<Props> = ({ setStep }) => {
+  return (
+    <div>
+      Ranking Page
+      <button type="button" onClick={() => setStep('start')}>
+        Go Start Page
+      </button>
+    </div>
+  );
 };
 
 export default Ranking;

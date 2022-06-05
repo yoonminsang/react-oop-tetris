@@ -1,9 +1,21 @@
-import type { FC } from 'react';
+import { TPanel } from '@/types';
 
-interface Props {}
+import type { Dispatch, FC, SetStateAction } from 'react';
 
-const StageClear: FC<Props> = () => {
-  return <div />;
+interface Props {
+  setStep: Dispatch<SetStateAction<TPanel>>;
+  stage: number;
+}
+
+const StageClear: FC<Props> = ({ setStep, stage }) => {
+  return (
+    <div>
+      {stage}Stage Clear
+      <button type="button" onClick={() => setStep('stageIntro')}>
+        go next stage
+      </button>
+    </div>
+  );
 };
 
 export default StageClear;
