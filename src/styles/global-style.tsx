@@ -51,6 +51,7 @@ const style = (theme: Theme): SerializedStyles => css`
   #root {
     display: flex;
     justify-content: center;
+    background-color: lightgray;
   }
 
   // for toast
