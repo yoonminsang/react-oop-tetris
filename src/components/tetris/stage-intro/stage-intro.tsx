@@ -34,7 +34,7 @@ const StageIntro: FC<Props> = ({ setStep, stage, increaseStage }) => {
   return (
     <div css={WrapperS}>
       <h1>
-        스테이지 <b>{stage}</b>
+        Stage <b>{stage}</b>
       </h1>
       <h2 data-testid="timer">{timer}</h2>
     </div>
