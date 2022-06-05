@@ -1,12 +1,12 @@
 import { useCallback, useState } from 'react';
 
-import Start from './components/tetris/start';
-import StageIntro from './components/tetris/stage-intro';
-import StageClear from './components/tetris/stage-clear';
-import Dead from './components/tetris/dead';
-import Ranking from './components/tetris/ranking';
-import Play from './components/tetris/play';
-import Clear from './components/tetris/clear';
+import { Start } from './components/tetris/start';
+import { StageIntro } from './components/tetris/stage-intro';
+import { StageClear } from './components/tetris/stage-clear';
+import { Dead } from './components/tetris/dead';
+import { Ranking } from './components/tetris/ranking';
+import { Play } from './components/tetris/play';
+import { Clear } from './components/tetris/clear';
 import { TPanel } from './types';
 
 import type { FC } from 'react';
@@ -20,21 +20,13 @@ const App: FC = () => {
     setStage((stage) => stage + 1);
   }, []);
 
-  const increaseScore = useCallback(
-    (line: number) => {
-      const addScore = Math.floor(stage * 5 * 2 ** line);
-      setScore((score) => score + addScore);
-    },
-    [stage],
-  );
-
   switch (step) {
     case 'start':
       return <Start setStep={setStep} />;
     case 'stageIntro':
       return <StageIntro setStep={setStep} stage={stage} increaseStage={increaseStage} />;
     case 'play':
-      return <Play setStep={setStep} stage={stage} score={score} increaseScore={increaseScore} />;
+      return <Play setStep={setStep} stage={stage} score={score} setScore={setScore} />;
     case 'stageClear':
       return <StageClear />;
     case 'clear':
