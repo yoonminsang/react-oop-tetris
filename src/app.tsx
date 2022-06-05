@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { Start } from './components/tetris/start';
 import { StageIntro } from './components/tetris/stage-intro';
@@ -20,6 +20,13 @@ const App: FC = () => {
     setStage((stage) => stage + 1);
   }, []);
 
+  useEffect(() => {
+    if (step === 'start') {
+      setScore(0);
+      setStage(0);
+    }
+  }, [step]);
+
   switch (step) {
     case 'start':
       return <Start setStep={setStep} />;
@@ -28,13 +35,13 @@ const App: FC = () => {
     case 'play':
       return <Play setStep={setStep} stage={stage} score={score} setScore={setScore} />;
     case 'stageClear':
-      return <StageClear />;
+      return <StageClear setStep={setStep} stage={stage} />;
     case 'clear':
-      return <Clear />;
+      return <Clear setStep={setStep} />;
     case 'dead':
-      return <Dead />;
+      return <Dead setStep={setStep} />;
     case 'ranking':
-      return <Ranking />;
+      return <Ranking setStep={setStep} />;
     default:
       return null;
   }
