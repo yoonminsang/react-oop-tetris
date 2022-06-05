@@ -44,5 +44,5 @@ export const usePlayTable = (
     setTable((table) => updateTable(table));
   }, [currentBlock, isCrash, onInitUser, position, changeClearLine]);
 
-  return { viewTable, clearLine };
+  return { table, viewTable, clearLine };
 };
