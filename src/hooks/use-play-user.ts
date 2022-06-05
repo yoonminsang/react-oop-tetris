@@ -4,9 +4,7 @@ import { IBlock, makeRandomBlock, TBlockShape } from '@/utils/block.util';
 import { SET } from '@/constants';
 
 const rotate = (arr2d: TBlockShape, dir: 'left' | 'right') => {
-  // Make the rows to become cols (transpose)
   const shape = arr2d.map((_, rowIndex) => arr2d.map((arrRow) => arrRow[rowIndex]));
-  // Reverse each row to get a rotaded matrix
   if (dir === 'right') return shape.map((row) => row.reverse());
   return shape.reverse();
 };
