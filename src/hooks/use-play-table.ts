@@ -37,7 +37,7 @@ export const usePlayTable = (
         onInitUser();
         return changeClearLine(newTable);
       }
-      return newTable;
+      return table;
     };
 
     setClearLine(0);
