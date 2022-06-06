@@ -39,6 +39,7 @@ describe('<StageIntro />', () => {
       jest.advanceTimersByTime(1000);
     });
     expect(time()).toBe(0);
-    expect(setStep).toBeCalled();
+    expect(setStep).toBeCalledTimes(1);
+    expect(setStep).toBeCalledWith('play');
   });
 });

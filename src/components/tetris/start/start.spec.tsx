@@ -13,6 +13,7 @@ describe('<Start />', () => {
   it('버튼을 누르면 step 변경', () => {
     const { setStep, button } = renderComplex();
     fireEvent.click(button);
-    expect(setStep).toBeCalled();
+    expect(setStep).toBeCalledTimes(1);
+    expect(setStep).toBeCalledWith('stageIntro');
   });
 });
