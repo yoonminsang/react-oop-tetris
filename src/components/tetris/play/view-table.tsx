@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 
 import { SET } from '@/constants';
-import { TableS } from '@/components/common';
+import { Table } from '@/components/common';
 
 import type { FC } from 'react';
 
@@ -11,11 +11,11 @@ interface Props {
 
 const ViewTable: FC<Props> = ({ viewTable }) => {
   return (
-    <div css={TableS} style={{ gridTemplateColumns: `repeat(${SET.col}, 1fr)` }}>
+    <Table style={{ gridTemplateColumns: `repeat(${SET.col}, 1fr)` }}>
       {viewTable.map((row) =>
         row.map((color, index) => <div key={index} css={{ backgroundColor: color === '0' ? '#000' : color }} />),
       )}
-    </div>
+    </Table>
   );
 };
 

@@ -1,12 +1,12 @@
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-export const AsideS = css`
+export const Aside = styled.aside`
   width: 200px;
   display: block;
   padding: 0 20px;
 `;
 
-export const DisplayS = css`
+export const Display = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ export const DisplayS = css`
   font-size: 0.8rem;
 `;
 
-export const TableS = css`
+export const Table = styled.div`
   display: grid;
   gap: 2px;
   background-color: gray;

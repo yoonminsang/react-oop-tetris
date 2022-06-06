@@ -1,4 +1,4 @@
-import { AsideS, DisplayS } from '@/components/common';
+import { Aside, Display } from '@/components/common';
 
 import type { FC } from 'react';
 
@@ -10,11 +10,11 @@ interface Props {
 
 const PlayAside: FC<Props> = ({ score, needClearLine, stage }) => {
   return (
-    <aside css={AsideS}>
-      <div css={DisplayS}>Score: {score}</div>
-      <div css={DisplayS}>NeedClearLine: {needClearLine}</div>
-      <div css={DisplayS}>Stage: {stage}</div>
-    </aside>
+    <Aside>
+      <Display>Score: {score}</Display>
+      <Display>NeedClearLine: {needClearLine}</Display>
+      <Display>Stage: {stage}</Display>
+    </Aside>
   );
 };
 

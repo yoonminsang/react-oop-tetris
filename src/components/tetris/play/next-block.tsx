@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import { AsideS, DisplayS, TableS } from '@/components/common';
+import { Aside, Display, Table } from '@/components/common';
 import { IBlock } from '@/utils/block.util';
 
 import type { FC } from 'react';
@@ -10,17 +10,17 @@ interface Props {
 
 const NextBlock: FC<Props> = ({ nextBlock }) => {
   return (
-    <aside css={AsideS}>
-      <div css={DisplayS} style={{ justifyContent: 'center' }}>
-        <div css={TableS} style={{ gridTemplateColumns: `repeat(${nextBlock.shape.length}, 1fr)` }}>
+    <Aside>
+      <Display style={{ justifyContent: 'center' }}>
+        <Table style={{ gridTemplateColumns: `repeat(${nextBlock.shape.length}, 1fr)` }}>
           {nextBlock.shape.map((row) =>
             row.map((isColor, index) => (
               <div key={index} css={{ backgroundColor: isColor ? nextBlock.color : '#000' }} />
             )),
           )}
-        </div>
-      </div>
-    </aside>
+        </Table>
+      </Display>
+    </Aside>
   );
 };
 

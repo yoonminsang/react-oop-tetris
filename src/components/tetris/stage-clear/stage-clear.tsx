@@ -12,7 +12,7 @@ const StageClear: FC<Props> = ({ setStep, stage }) => {
     <div>
       <b>{stage}</b>Stage Clear
       <button type="button" onClick={() => setStep('stageIntro')}>
-        go next stage
+        Go next stage
       </button>
     </div>
   );
