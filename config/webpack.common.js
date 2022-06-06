@@ -28,7 +28,16 @@ module.exports = {
               '@babel/preset-typescript',
               ['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }],
             ],
-            plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }], '@emotion/babel-plugin'],
+            plugins: [
+              ['@babel/plugin-transform-runtime', { corejs: 3 }],
+              [
+                '@emotion/babel-plugin',
+                {
+                  autoLabel: 'dev-only', // 기본값 'dev-only'
+                  labelFormat: 'dev--[dirname]--[filename]--[local]',
+                },
+              ],
+            ],
           },
         },
       },
