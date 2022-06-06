@@ -1,1 +1,1 @@
-export type TPanel = 'start' | 'stageIntro' | 'play' | 'stageClear' | 'clear' | 'dead' | 'ranking';
+export type TStep = 'start' | 'stageIntro' | 'play' | 'stageClear' | 'clear' | 'dead' | 'ranking';

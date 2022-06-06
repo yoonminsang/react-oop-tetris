@@ -5,7 +5,7 @@
 import { css } from '@emotion/react';
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 
-import { TPanel } from '@/types';
+import { TStep } from '@/types';
 import { KEY_EVENT } from '@/constants';
 import { useInterval } from '@/hooks/use-interval';
 import { usePlayStatus } from '@/hooks/use-play-status';
@@ -18,7 +18,7 @@ import PlayAside from './play-aside';
 import NextBlock from './next-block';
 
 interface Props {
-  setStep: Dispatch<SetStateAction<TPanel>>;
+  setStep: Dispatch<SetStateAction<TStep>>;
   stage: number;
   score: number;
   setScore: Dispatch<SetStateAction<number>>;

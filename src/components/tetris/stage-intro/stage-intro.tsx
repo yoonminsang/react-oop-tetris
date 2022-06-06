@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 import { Dispatch, FC, SetStateAction, useEffect, useLayoutEffect, useState } from 'react';
 
-import { TPanel } from '@/types';
+import { TStep } from '@/types';
 
 interface Props {
-  setStep: Dispatch<SetStateAction<TPanel>>;
+  setStep: Dispatch<SetStateAction<TStep>>;
   stage: number;
   increaseStage: () => void;
 }

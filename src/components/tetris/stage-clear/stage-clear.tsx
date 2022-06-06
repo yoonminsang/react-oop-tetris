@@ -1,9 +1,9 @@
-import { TPanel } from '@/types';
+import { TStep } from '@/types';
 
 import type { Dispatch, FC, SetStateAction } from 'react';
 
 interface Props {
-  setStep: Dispatch<SetStateAction<TPanel>>;
+  setStep: Dispatch<SetStateAction<TStep>>;
   stage: number;
 }
 

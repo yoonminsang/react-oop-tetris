@@ -7,12 +7,12 @@ import { Dead } from './components/tetris/dead';
 import { Ranking } from './components/tetris/ranking';
 import { Play } from './components/tetris/play';
 import { Clear } from './components/tetris/clear';
-import { TPanel } from './types';
+import { TStep } from './types';
 
 import type { FC } from 'react';
 
 const App: FC = () => {
-  const [step, setStep] = useState<TPanel>('start');
+  const [step, setStep] = useState<TStep>('start');
   const [score, setScore] = useState<number>(0);
   const [stage, setStage] = useState<number>(0);
 
