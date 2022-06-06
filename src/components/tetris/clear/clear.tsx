@@ -9,9 +9,12 @@ interface Props {
 const Clear: FC<Props> = ({ setStep }) => {
   return (
     <div>
-      Clear Page
+      You complete all stage 😆
       <button type="button" onClick={() => setStep('start')}>
         Go Start Page
+      </button>
+      <button type="button" onClick={() => setStep('ranking')}>
+        Go Ranking Page
       </button>
     </div>
   );

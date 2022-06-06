@@ -10,7 +10,7 @@ interface Props {
 const StageClear: FC<Props> = ({ setStep, stage }) => {
   return (
     <div>
-      {stage}Stage Clear
+      <b>{stage}</b>Stage Clear
       <button type="button" onClick={() => setStep('stageIntro')}>
         go next stage
       </button>
