@@ -1,6 +1,3 @@
-/* eslint-disable max-classes-per-file */
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 import { SET } from '@/constants';
 
 import { copy2DArr } from '.';
@@ -11,7 +8,7 @@ export interface IBlock {
   shape: TBlockShape;
 }
 
-const BLOCK: IBlock[] = [
+export const BLOCK: IBlock[] = [
   {
     color: '#00C3ED',
     shape: [
@@ -77,9 +74,8 @@ export const makeEmptyTable = () =>
     .fill(null)
     .map(() => Array(SET.col).fill('0')) as string[][];
 
-export const makeBlockToTable = (table: string[][], block: IBlock, position: { x: number; y: number }) => {
+export const makeBlockToTable = (table: string[][], { color, shape }: IBlock, position: { x: number; y: number }) => {
   const newTable = copy2DArr(table);
-  const { color, shape } = block;
   shape.forEach((row, rowIndex) => {
     row.forEach((isColor, colIndex) => {
       if (isColor) {

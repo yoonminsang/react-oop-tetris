@@ -33,6 +33,7 @@
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
+    "jest/no-commented-out-tests": "off",
     "consistent-return": "off",
     "class-methods-use-this": "off",
     "no-console": "off",

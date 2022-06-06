@@ -33,7 +33,7 @@ module.exports = {
               [
                 '@emotion/babel-plugin',
                 {
-                  autoLabel: 'dev-only', // 기본값 'dev-only'
+                  autoLabel: 'dev-only',
                   labelFormat: 'dev--[dirname]--[filename]--[local]',
                 },
               ],
