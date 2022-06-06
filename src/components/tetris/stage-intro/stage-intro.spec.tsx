@@ -11,9 +11,16 @@ const renderComplex = (stageParam: number) => {
   return { setStep, increaseStage, stage, time, container };
 };
 
-beforeEach(() => {
+beforeAll(() => {
   jest.useFakeTimers();
-  jest.spyOn(window, 'setInterval');
+});
+
+beforeEach(() => {
+  jest.spyOn(global, 'setInterval');
+});
+
+afterAll(() => {
+  jest.useRealTimers();
 });
 
 describe('<StageIntro />', () => {
